@@ -2,7 +2,6 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -2158,4 +2157,6 @@
 <jsp:include page="common/js.jsp"></jsp:include>
    
 </body>
+
+
 </html>
