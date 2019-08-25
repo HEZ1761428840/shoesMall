@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.yc.shoesMall.bean.User;
 import com.yc.shoesMall.bean.UserExample;
@@ -18,7 +19,7 @@ public class UserBiz {
 		@Resource
 		private UserMapper um;
 		
-		@GetMapping("login")
+		@PostMapping("login")
 		public User login(String name, String password) throws BizException {
 			UserExample ue =new UserExample();
 			ue.createCriteria().andNameEqualTo(name).andPasswordEqualTo(password);

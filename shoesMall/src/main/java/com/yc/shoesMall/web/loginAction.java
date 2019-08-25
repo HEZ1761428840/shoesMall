@@ -2,9 +2,9 @@ package com.yc.shoesMall.web;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.yc.shoesMall.bean.User;
 import com.yc.shoesMall.biz.BizException;
@@ -12,7 +12,7 @@ import com.yc.shoesMall.biz.UserBiz;
 import com.yc.shoesMall.result.Result;
 
 
-@RestController
+@Controller
 public class loginAction {
 	
 	/**
@@ -24,7 +24,7 @@ public class loginAction {
 	@Resource
 	private UserBiz ub;
 	
-	@PostMapping("login")
+	@GetMapping("login")
 	public Result login(String name,String password,Model model) {
 	try{
 		User user = ub.login(name, password);
