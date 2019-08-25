@@ -8,5 +8,7 @@ public class Test {
 		System.out.println("谭康华的测试");
 		System.out.println("22222222222222");
 		System.out.println("11111111111111111");
+		System.out.println("assssssssss");
+		System.out.println("adasfasf");
 	}
 }
