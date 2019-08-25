@@ -1,5 +1,8 @@
 package com.yc.shoesMall.web;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
