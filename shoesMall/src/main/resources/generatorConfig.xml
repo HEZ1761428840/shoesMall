@@ -35,7 +35,11 @@
 		</javaClientGenerator>
 
 		<!-- 使用 % 表示所有的表 ORCL MySQL 只要 tableName="%" -->
+<<<<<<< HEAD
 		<table tableName="orders">
+=======
+		<table tableName="user">
+>>>>>>> branch 'master' of https://github.com/HEZ1761428840/shoesMall.git
 			<generatedKey column="ID" sqlStatement="MYSQl" identity="true" />
 		</table>
 
