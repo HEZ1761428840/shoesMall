@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexAction_back {
 
-	@RequestMapping("index")
+	@RequestMapping("backIndex")
 	public String index() {
 		return null;
 	}

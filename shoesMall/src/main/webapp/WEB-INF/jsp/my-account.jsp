@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +67,7 @@
                             <nav aria-label="breadcrumb">
                                 <h3 class="breadcrumb-title">MY ACCOUNT</h3>
                                 <ul class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="index"><i class="fa fa-home"></i></a></li>
                                     <li class="breadcrumb-item active" aria-current="page">My Account</li>
                                 </ul>
                             </nav>
@@ -89,19 +91,19 @@
                                     <div class="col-lg-3 col-md-4">
                                         <div class="myaccount-tab-menu nav" role="tablist">
                                             <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
-                                                Dashboard</a>
+                                                仪表板</a>
                                             <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
-                                                Orders</a>
+                                                订单</a>
                                             <a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i>
-                                                Download</a>
+                                                下载</a>
                                             <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i>
-                                                Payment
-                                                Method</a>
+                                                支付方式
+                                                </a>
                                             <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>
-                                                Address</a>
-                                            <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account
-                                                Details</a>
-                                            <a href="login-register.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                                地址</a>
+                                            <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> 
+                                                账户详细资料</a>
+                                            <a href="login-register.html"><i class="fa fa-sign-out"></i> 退出</a>
                                         </div>
                                     </div>
                                     <!-- My Account Tab Menu End -->
@@ -112,14 +114,12 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h5>Dashboard</h5>
+                                                    <h5>仪表板</h5>
                                                     <div class="welcome">
-                                                        <p>Hello, <strong>Erik Jhonson</strong> (If Not <strong>Jhonson
-                                                            !</strong><a href="login-register.html" class="logout"> Logout</a>)</p>
+                                                        <p>${loginedUser==null? 'Hello, Erik Jhonson' : 'Hello,'.concat(loginedUser.name)}
+                                                            <a href="login" class="logout"> 退出</a></p>
                                                     </div>
-                                                    <p class="mb-0">From your account dashboard. you can easily check &
-                                                        view your recent orders, manage your shipping and billing addresses
-                                                        and edit your password and account details.</p>
+                                                    <p class="mb-0">从你的账户仪表板。您可以很容易地检查和查看您最近的订单，管理您的发货和账单地址，并编辑您的密码和帐户细节。</p>
                                                 </div>
                                             </div>
                                             <!-- Single Tab Content End -->
@@ -127,43 +127,30 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="orders" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h5>Orders</h5>
+                                                    <h5>订单表</h5>
                                                     <div class="myaccount-table table-responsive text-center">
                                                         <table class="table table-bordered">
                                                             <thead class="thead-light">
                                                                 <tr>
-                                                                    <th>Order</th>
-                                                                    <th>Date</th>
-                                                                    <th>Status</th>
-                                                                    <th>Total</th>
-                                                                    <th>Action</th>
+                                                                    <th>订单</th>
+                                                                    <th>下单时间</th>
+                                                                    <th>状态</th>
+                                                                    <th>总额</th>
+                                                                    <th>操作</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                            	<c:forEach items="${orderLists }" var="order">
                                                                 <tr>
-                                                                    <td>1</td>
-                                                                    <td>Aug 22, 2018</td>
-                                                                    <td>Pending</td>
-                                                                    <td>$3000</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">View</a>
+                                                                    <td>${order.id}</td>
+                                                                    <td>${order.createTime}</td>
+                                                                    <td>${order.status}</td>
+                                                                    <td>${order.countPrice}</td>
+                                                                    <td><a href="cart.html" class="btn btn-sqr">查看</a>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>2</td>
-                                                                    <td>July 22, 2018</td>
-                                                                    <td>Approved</td>
-                                                                    <td>$200</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">View</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3</td>
-                                                                    <td>June 12, 2017</td>
-                                                                    <td>On Hold</td>
-                                                                    <td>$990</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">View</a>
-                                                                    </td>
-                                                                </tr>
+                                                              </c:forEach> 
+                                                                
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -212,8 +199,10 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="payment-method" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h5>Payment Method</h5>
-                                                    <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
+                                                    <h5>支付方式</h5>
+                                                    
+                                                    <a href="../pay/index.jsp" class="btn btn-sqr">
+                                                                            支付宝支付</a>
                                                 </div>
                                             </div>
                                             <!-- Single Tab Content End -->
