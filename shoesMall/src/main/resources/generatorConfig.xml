@@ -35,7 +35,7 @@
 		</javaClientGenerator>
 
 		<!-- 使用 % 表示所有的表 ORCL MySQL 只要 tableName="%" -->
-		<table tableName="%">
+		<table tableName="user">
 			<generatedKey column="ID" sqlStatement="MYSQl" identity="true" />
 		</table>
 
