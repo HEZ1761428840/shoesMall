@@ -93,4 +93,8 @@ public interface AddressMapper {
      * @mbg.generated Fri Aug 23 16:59:06 CST 2019
      */
     int updateByPrimaryKey(Address record);
+
+	List<Address> selectAll(int id);
+
+	Address selectAddress(int id);
 }

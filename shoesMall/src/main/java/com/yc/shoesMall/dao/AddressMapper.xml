@@ -298,4 +298,18 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  
+    select * 
+    from address
+    where uid = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAddress" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  
+    select * 
+    from address
+    where uid = #{id,jdbcType=INTEGER}
+  </select>
+  
+  
 </mapper>

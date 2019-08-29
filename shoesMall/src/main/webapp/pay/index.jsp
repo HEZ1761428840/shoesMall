@@ -360,9 +360,14 @@ h2 {
 		</div>
 	</div>
 </body>
+
+
+
 <script language="javascript">
 	var tabs = document.getElementsByName('tab');
 	var contents = document.getElementsByName('divcontent');
+	
+	var table = document.getElementById("table1"); 
 	
 	(function changeTab(tab) {
 	    for(var i = 0, len = tabs.length; i < len; i++) {
@@ -394,7 +399,7 @@ h2 {
 		sNow += String(vNow.getMilliseconds());
 		document.getElementById("WIDout_trade_no").value =  sNow;
 		document.getElementById("WIDsubject").value = "测试";
-		document.getElementById("WIDtotal_amount").value = "0.01";
+		document.getElementById("WIDtotal_amount").value = price;
 	}
 	GetDateNow();
 </script>

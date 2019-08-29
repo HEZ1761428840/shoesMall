@@ -32,4 +32,38 @@ public class UserBiz {
 			}
 			return list.get(0);
 		}
+
+		/**
+		 * 
+		 * @param user
+		 * @return
+		 */
+		public int queryId(User user) {
+			
+			return um.selectIdByName(user);
+		}
+		
+		
+		/**
+		 * myaccount信息修改
+		 * @param user
+		 * @return
+		 */
+		public int update(User user){
+			UserExample example=new UserExample();
+			return um.updateByPrimaryKeySelective(user);
+			
+		}
+		
+		/**
+		 * 通过id查出用户
+		 * @param id
+		 * @return
+		 */
+		public User queryByKey(int id) {
+			
+			return um.selectByPrimaryKey(id);
+		}
+		
+		
 }

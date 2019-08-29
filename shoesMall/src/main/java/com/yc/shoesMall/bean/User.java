@@ -1,7 +1,11 @@
 package com.yc.shoesMall.bean;
 
 import java.util.Date;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(value = {"handler"})
 public class User {
     /**
      *
@@ -10,7 +14,19 @@ public class User {
      *
      * @mbg.generated Mon Aug 26 10:44:00 CST 2019
      */
-    private Integer id;
+	
+	/*private List<Orders> Myorder;
+	
+	
+    public List<Orders> getMyorder() {
+		return Myorder;
+	}
+
+	public void setMyorder(List<Orders> myorder) {
+		Myorder = myorder;
+	}
+*/
+	private Integer id;
 
     /**
      *

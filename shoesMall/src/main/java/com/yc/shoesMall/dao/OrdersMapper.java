@@ -96,5 +96,7 @@ public interface OrdersMapper {
      */
     int updateByPrimaryKey(Orders record);
 
+    List<Orders> selectOrdersByPrimaryKey(Integer id);
+
 	
 }

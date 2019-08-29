@@ -16,7 +16,20 @@
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="email" jdbcType="VARCHAR" property="email" />
+    
+    <!--用户和订单的一对多  -->
+    <!-- <collection property="Myorder" column="id" fetchType="lazy"
+     	 select="selectOrderById">
+ 
+    </collection> -->
+   
   </resultMap>
+ <!--  <select id="selectOrderById"
+  			resultMap="com.yc.shoesMall.dao.OrdersMapper.BaseResultMap">
+  			select * from orders where uid=#{id}
+  </select> -->
+  
+  
   <sql id="Example_Where_Clause">
     <!--
       WARNING - @mbg.generated
@@ -345,4 +358,12 @@
       email = #{email,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectIdByName"  resultType="java.lang.Integer">
+    
+    select id from user where name = #{name}
+  </select>
+  
+  
+  
 </mapper>
