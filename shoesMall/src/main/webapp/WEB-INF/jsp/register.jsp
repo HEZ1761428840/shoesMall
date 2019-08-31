@@ -37,6 +37,8 @@
 	
 	<jsp:include page="common/header.jsp"></jsp:include>
 
+	<jsp:include page="common/main.jsp"></jsp:include>
+
     <!-- offcanvas search form start -->
     <div class="offcanvas-search-wrapper">
         <div class="offcanvas-search-inner">
@@ -54,62 +56,6 @@
         </div>
     </div>
     <!-- offcanvas search form end -->
-
-    <main>
-        <!-- breadcrumb area start -->
-        <div class="breadcrumb-area breadcrumb-img bg-img" data-bg="assets/img/banner/shop.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-wrap">
-                            <nav aria-label="breadcrumb">
-                                <h3 class="breadcrumb-title">LOGIN REGISTER</h3>
-                                <ul class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Login Register</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- breadcrumb area end -->
-
-        <!-- login register wrapper start -->
-        <div class="login-register-wrapper section-padding">
-            <div class="container">
-                <div class="member-area-from-wrap">
-                    <div class="row">
-                        <!-- Login Content Start -->
-                        <div class="col-lg-6">
-                            <div class="login-reg-form-wrap">
-                                <h4>Sign In</h4>
-                                <form action="#" method="post">
-                                    <div class="single-input-item">
-                                        <input type="email" placeholder="Email or Username" required />
-                                    </div>
-                                    <div class="single-input-item">
-                                        <input type="password" placeholder="Enter your Password" required />
-                                    </div>
-                                    <div class="single-input-item">
-                                        <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
-                                            <div class="remember-meta">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                                    <label class="custom-control-label" for="rememberMe">Remember Me</label>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="forget-pwd">Forget Password?</a>
-                                        </div>
-                                    </div>
-                                    <div class="single-input-item">
-                                        <button class="btn btn-sqr">Login</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- Login Content End -->
 
                         <!-- Register Content Start -->
                         <div class="col-lg-6">

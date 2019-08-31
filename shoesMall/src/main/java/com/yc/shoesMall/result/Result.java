@@ -8,8 +8,36 @@ public class Result {
 	private int code;
 	private String msg;
 	private Object data;
+	private int count;
+	private int page;
 	
-	
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public Result(int code, String msg, Object data, int count,int page) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
+		this.count = count;
+		this.page = page;
+	}
+	public Result(int code, String msg, Object data, int count) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
+		this.count = count;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	public Result(int code, String msg, Object data) {
 		super();
 		this.code = code;
