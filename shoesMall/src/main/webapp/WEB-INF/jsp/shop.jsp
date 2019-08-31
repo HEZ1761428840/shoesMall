@@ -177,7 +177,7 @@
                                         <div class="product-content">
                                             <div class="product-caption">
                                                 <h6 class="product-name">
-                                                    <a href="product-details-variable?id=${p.id}">${p.name}</a>
+                                                    <a href="product-details-variable?id=${p.id}" data-toggle="modal" data-target="#quick_view">${p.name}</a>
                                                 </h6>
                                                 <div class="price-box">
                                                     <span class="price-regular">${p.price}</span>
@@ -369,6 +369,8 @@
         </div>
     </div>
     <!-- Quick view modal end -->
+    
+    
 <jsp:include page="common/js.jsp"></jsp:include>
 
 <script type="text/javascript">

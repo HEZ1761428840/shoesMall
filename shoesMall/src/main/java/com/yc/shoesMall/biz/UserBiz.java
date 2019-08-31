@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.yc.shoesMall.bean.User;
 import com.yc.shoesMall.bean.UserExample;
@@ -18,6 +19,9 @@ public class UserBiz {
 		@Resource
 		private UserMapper um;
 		
+		/*
+		 * 用户登录
+		 */
 		@GetMapping("login")
 		public User login(String name, String password) throws BizException {
 			UserExample ue =new UserExample();
@@ -28,4 +32,38 @@ public class UserBiz {
 			}
 			return list.get(0);
 		}
+
+		/**
+		 * 
+		 * @param user
+		 * @return
+		 */
+		public int queryId(User user) {
+			
+			return um.selectIdByName(user);
+		}
+		
+		
+		/**
+		 * myaccount信息修改
+		 * @param user
+		 * @return
+		 */
+		public int update(User user){
+			UserExample example=new UserExample();
+			return um.updateByPrimaryKeySelective(user);
+			
+		}
+		
+		/**
+		 * 通过id查出用户
+		 * @param id
+		 * @return
+		 */
+		public User queryByKey(int id) {
+			
+			return um.selectByPrimaryKey(id);
+		}
+		
+		
 }

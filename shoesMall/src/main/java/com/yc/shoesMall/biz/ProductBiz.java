@@ -30,10 +30,6 @@ public class ProductBiz {
 		return productMapper.selectByExample(null);
 	}
 	
-	public Product  selectId(Integer id) {
-		return productMapper.selectByPrimaryKey(id);
-	}
-	
 	
 	// 分类型查询  判断 是否 有 时间 和 类型
 	public List<Product> fuzzyQuery(Long maxPrice,Long minPrice ,List<Integer> productBrands,Integer page) {

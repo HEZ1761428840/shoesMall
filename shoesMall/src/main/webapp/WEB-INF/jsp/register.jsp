@@ -56,27 +56,33 @@
         </div>
     </div>
     <!-- offcanvas search form end -->
-
                         <!-- Register Content Start -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" moth=post>
                             <div class="login-reg-form-wrap sign-up-form">
                                 <h4>Singup Form</h4>
-                                <form action="#" method="post">
+                                	<form action="register" name="myForm" onsubmit="return validate_form(this);"
+                                	method="post" enctype="multipart/form-data">
                                     <div class="single-input-item">
-                                        <input type="text" placeholder="Full Name" required />
+                                        <input type="text" placeholder="Full Name"  name ="name" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <input type="email" placeholder="Enter your Email" required />
+     								   <input type="file" name="head_pictrue" required>
+                                    </div>
+                                    <div class="single-input-item">
+                                        <input type="email" placeholder="Enter your Email"  name="email" required />
+                                    </div>
+                                    <div class="single-input-item">
+                                        <input type="text" placeholder="Enter your phone"  name="phone" required />
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="single-input-item">
-                                                <input type="password" placeholder="Enter your Password" required />
+                                                <input type="password" placeholder="Enter your Password" name="password" required />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="single-input-item">
-                                                <input type="password" placeholder="Repeat your Password" required />
+                                                <input type="password" placeholder="Repeat your Password" name="password1" required />
                                             </div>
                                         </div>
                                     </div>
@@ -92,9 +98,9 @@
                                         </div>
                                     </div>
                                     <div class="single-input-item">
-                                        <button class="btn btn-sqr">Register</button>
+                                        <button type="submit" class="btn btn-sqr">Register</button>
                                     </div>
-                                </form>
+                                    </form>
                             </div>
                         </div>
                         <!-- Register Content End -->
@@ -104,6 +110,46 @@
         </div>
         <!-- login register wrapper end -->
     </main>
+    <script type="text/javascript">
+   					//邮箱的表单验证
+					function validate_email(field, alerttxt) {
+						with (field) {
+							apos = value.indexOf("@")
+							dotpos = value.lastIndexOf(".")
+							if (apos < 1 || dotpos - apos < 2) {
+								alert(alerttxt);
+								return false
+							} else {
+								return true
+							}
+						}
+					}
+					function validate_form(thisform){
+					with (thisform){
+					if (validate_email(email,"Not a valid e-mail address!")==false)
+					  {email.focus();return false}
+					}
+					}
+					
+					//密码和确定密码的一致性验证
+					function validate_form(){
+						var x = document.forms["myForm"]["password"].value;
+						var y = document.forms["myForm"]["password1"].value;
+						var reg = /^[0-9]+$/; 
+						var phone = document.forms["myForm"]["phone"].value;
+						alert(phone);
+						if(x != y){
+							alert("密码请一致");
+							return false;
+						}
+						//电话号码的长度验证11位
+						if(phone.length!=11){
+							alert("请输入正确的电话号码");
+							return false;
+						}
+					}	
+					
+				</script>
 
     <!-- Scroll to top start -->
     <div class="scroll-top not-visible">

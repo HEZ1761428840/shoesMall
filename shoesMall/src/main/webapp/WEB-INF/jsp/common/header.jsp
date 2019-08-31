@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <!-- Start Header Area -->
     <header class="header-area">
         <!-- main header start -->
@@ -20,10 +22,12 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                             </div>
+                            
                             <ul class="user-info-block">
                                 <li><a href="my-account"><i class="fa fa-user-circle"></i>我的账户</a></li>
-                                <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
-                                <li><a href="register"><i class="fa fa-sign-in"></i>注册</a></li>
+                                <img style="width:50px; height:50px; border-radius:50%; " src="${ loginUser.headPictrue}">
+                                <li><a href="tologin"><i class="fa fa-sign-in"></i> ${loginUser == null?'HI,请登录':'欢迎:'.concat(loginUser.name) }</a></li>
+                                <li><a href="toregister"><i class="fa fa-sign-in"></i>注册</a></li>
                             </ul>
                         </div>
                     </div>
@@ -82,13 +86,14 @@
                                         <li class="mini-cart-wrap">
                                             <a href="#" class="minicart-btn">
                                                 <i class="fa fa-shopping-cart"></i>
-                                                <span class="notification">2</span>
+                                                <span class="notification">${orders==null?0:(fn:length(orders))}</span>
                                             </a>
                                             <div class="cart-list-wrapper">
                                                 <ul class="cart-list">
-                                                    <li>
+                                                <c:forEach items="${orders}" var="o">
+                                                	 <li>
                                                         <div class="cart-img">
-                                                            <a href="product-details.html"><img src="assets/img/cart/cart-1.jpg" alt=""></a>
+                                                            <a href="product-details.html"><img src="img/	" alt=""></a>
                                                         </div>
                                                         <div class="cart-info">
                                                             <h6 class="product-name"><a href="product-details.html">7th Generation classic</a></h6>
@@ -99,19 +104,10 @@
                                                             <i class="fa fa-times"></i>
                                                         </div>
                                                     </li>
-                                                    <li>
-                                                        <div class="cart-img">
-                                                            <a href="product-details.html"><img src="assets/img/cart/cart-2.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="cart-info">
-                                                            <h6 class="product-name"><a href="product-details.html">Digital 8th generation</a></h6>
-                                                            <span class="cart-qty">Qty: 2</span>
-                                                            <span class="item-price">$70.00</span>
-                                                        </div>
-                                                        <div class="del-icon">
-                                                            <i class="fa fa-times"></i>
-                                                        </div>
-                                                    </li>
+                                             
+                                                </c:forEach>
+                                                   
+                                                   
                                                 </ul>
                                                 <ul class="minicart-pricing-box">
                                                     <li>

@@ -5,12 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class indexAction {
+	
 	@RequestMapping("index")
 	public String index() {
-		
 		return "index";
 	}
-	
-	
-	
+
 }
