@@ -26,18 +26,21 @@
     </association>
     
     <!-- 一对多   查询图片 -->
-    <collection property="image" column="id" fetchType="lazy"
-    	select="selectImageById"></collection>
+    <collection property="images" column="id" fetchType="lazy"
+    	select="selectIamgs"></collection>
     
     <collection property="productSizes" column="id" select="selectSizes"></collection>
     
   </resultMap>
   
   <!-- 查询图片表 -->
-  <select id="selectImageById" 
-  		resultMap="com.yc.shoesMall.dao.ImageMapper.BaseResultMap">
-  		select * from image where pid = #{pid}
-  </select>
+   <select id="selectIamgs" resultMap="com.yc.shoesMall.dao.ImageMapper.BaseResultMap">
+  		select * from image where pid=#{id}
+  	</select>
+  	
+	<select id="selectSizes" resultMap="com.yc.shoesMall.dao.ProductSizeMapper.BaseResultMap">
+	  		select * from product_size where pid=#{id}
+	</select>
   
   <select id="selectById" resultMap="BaseResultMap">
    		select name from product where id=#{id}
@@ -342,6 +345,7 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+
   </update>
   <update id="updateByExample" parameterType="map">
     <!--
