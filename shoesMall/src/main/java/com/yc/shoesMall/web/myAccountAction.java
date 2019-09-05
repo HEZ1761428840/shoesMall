@@ -1,17 +1,17 @@
 package com.yc.shoesMall.web;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.ibatis.annotations.Param;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.yc.shoesMall.bean.Address;
@@ -23,6 +23,7 @@ import com.yc.shoesMall.biz.UserBiz;
 
 @Controller
 @JsonIgnoreProperties(value = {"handler"})
+@SessionAttributes("loginUser")
 public class myAccountAction {
 
 	@Resource
@@ -43,10 +44,15 @@ public class myAccountAction {
 	 * @return
 	 */
 	@RequestMapping("my-account")
-	public String myaccount(@SessionAttribute("loginUser") User user,Model model) {
-		int id=ubiz.queryId(user);
-        model.addAttribute("orderLists", obiz.queryMyOrder(id));
-        model.addAttribute("account_details", obiz.queryAddress(id));
+	public String myaccount(@SessionAttribute(name = "loginUser", required = false) User user,Model model) {
+		
+		//判断是否登录存在用户
+		if(user!=null){
+			int id=ubiz.queryId(user);
+	        model.addAttribute("orderLists", obiz.queryMyOrder(id));
+	        model.addAttribute("account_details", obiz.queryAddress(id));	
+		}
+		
        
 		return "my-account";
 	}
@@ -101,6 +107,27 @@ public class myAccountAction {
 		
 	
 	}
+	
+	
+	/**
+	 * 注销退出
+	 * @param user
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("CheckOut")
+	
+	public String CheckOut(@SessionAttribute("loginUser") User user,Model model) { 
+	   user=null;
+       model.addAttribute("loginUser", user);		
+		return "index";
+		
+	
+	}
+	
+	
+	
+	
 	
 }
 	

@@ -22,7 +22,7 @@ public class UserBiz {
 		/*
 		 * 用户登录
 		 */
-		@GetMapping("login")
+		
 		public User login(String name, String password) throws BizException {
 			UserExample ue =new UserExample();
 			ue.createCriteria().andNameEqualTo(name).andPasswordEqualTo(password);

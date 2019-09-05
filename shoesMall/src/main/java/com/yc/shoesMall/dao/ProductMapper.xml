@@ -362,4 +362,10 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectById" resultMap="BaseResultMap">
+   		select name from product where id=#{id}
+  </select>
+  
+  
 </mapper>

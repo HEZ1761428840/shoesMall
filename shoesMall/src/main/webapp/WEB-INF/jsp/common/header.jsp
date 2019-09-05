@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <
  <!-- Start Header Area -->
     <header class="header-area">
         <!-- main header start -->
@@ -370,3 +369,5 @@
         <!-- offcanvas mobile menu end -->
     </header>
     <!-- end Header Area -->
+    
+   

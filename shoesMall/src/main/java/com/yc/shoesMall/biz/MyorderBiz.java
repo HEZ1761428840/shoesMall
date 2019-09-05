@@ -20,7 +20,7 @@ import com.yc.shoesMall.dao.UserMapper;
 public class MyorderBiz {
 	
 	@Autowired
-	private OrdersMapper om;
+	private  OrdersMapper om;
 	
 	@Autowired
 	private AddressMapper am;
@@ -47,5 +47,24 @@ public class MyorderBiz {
 		
 		return am.selectAll(id);
 	}
+	
+	/**
+	 * cart界面的删除指定商品操作
+	 * 
+	 * @param id
+	 */
+	public void deleteById(int id) {
+		om.deleteByPrimaryKey(id);
+		
+	}
+
+
+
+	public int update(Orders order) {
+		
+		return om.updateByPrimaryKeySelective(order);
+	}
+	
+	
 
 }
