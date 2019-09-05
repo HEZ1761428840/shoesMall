@@ -1,10 +1,11 @@
 package com.yc.shoesMall.dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.yc.shoesMall.bean.User;
 import com.yc.shoesMall.bean.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-
+@JsonIgnoreProperties(value = {"handler"})
 public interface UserMapper {
 	
 	/**
@@ -101,4 +102,6 @@ public interface UserMapper {
      * @mbg.generated Mon Aug 26 15:25:53 CST 2019
      */
     int updateByPrimaryKey(User record);
+
+	int selectIdByName(User user);
 }

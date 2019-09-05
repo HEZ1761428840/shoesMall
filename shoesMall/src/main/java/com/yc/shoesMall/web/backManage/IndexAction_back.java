@@ -10,6 +10,7 @@ import com.yc.shoesMall.biz.backManage.ProductBiz_back;
 
 @Controller
 public class IndexAction_back {
+
 	@Resource ProductBiz_back pb;
 	
 	/**
@@ -29,5 +30,6 @@ public class IndexAction_back {
 	public String ProductManage(Model model) {
 		model.addAttribute("pbList", pb.queryProductBrand());
 		return "backManage/productManage";
-	}
+	}	
+
 }

@@ -20,10 +20,12 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                             </div>
+                            
                             <ul class="user-info-block">
                                 <li><a href="my-account"><i class="fa fa-user-circle"></i>我的账户</a></li>
-                                <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
-                                <li><a href="register"><i class="fa fa-sign-in"></i>注册</a></li>
+                                <img style="width:50px; height:50px; border-radius:50%; " src="${ loginUser.headPictrue}">
+                                <li><a href="tologin"><i class="fa fa-sign-in"></i> ${loginUser == null?'HI,请登录':'欢迎:'.concat(loginUser.name) }</a></li>
+                                <li><a href="toregister"><i class="fa fa-sign-in"></i>注册</a></li>
                             </ul>
                         </div>
                     </div>
@@ -367,3 +369,5 @@
         <!-- offcanvas mobile menu end -->
     </header>
     <!-- end Header Area -->
+    
+   
