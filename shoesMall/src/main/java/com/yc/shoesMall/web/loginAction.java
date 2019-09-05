@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.shoesMall.bean.User;
 import com.yc.shoesMall.biz.BizException;
+import com.yc.shoesMall.biz.MyorderBiz;
 import com.yc.shoesMall.biz.UserBiz;
 import com.yc.shoesMall.result.Result;
 
 
 @Controller
-@SessionAttributes("loginUser")
+@SessionAttributes({"loginUser","orders"})
 public class loginAction {
 	
 	/**
@@ -27,6 +28,9 @@ public class loginAction {
 	 * @param model
 	 * @return
 	 */
+	@Resource
+	private MyorderBiz obiz;
+	
 	@Resource
 	private UserBiz ub;
 	
@@ -52,6 +56,7 @@ public class loginAction {
 	try{
 		User user = ub.login(name, password);
 		model.addAttribute("loginUser",user);//添加到session
+		 model.addAttribute("orders", obiz.queryMyOrder(user.getId()));
 		return new Result(1, "OK",user);
 	}catch(BizException e){
 		return new Result(0,e.getMessage());

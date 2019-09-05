@@ -9,6 +9,7 @@ public class Result {
 	private String msg;
 	
 	private Object data;
+	private int page;
 	
 	/**
 	 * layui用到的格式,加一个字段
@@ -27,6 +28,28 @@ public class Result {
 		this.msg = msg;
 		this.count = count;
 		this.data = data;
+	}
+	
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public Result(int code, String msg, Object data, int count,int page) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
+		this.count = count;
+		this.page = page;
+	}
+	public Result(int code, String msg, Object data, int count) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
+		this.count = count;
 	}
 	
 	public Result(int code, String msg, Object data) {

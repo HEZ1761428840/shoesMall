@@ -841,6 +841,7 @@ public class UserExample {
      * This class corresponds to the database table user
      *
      * @mbg.generated Mon Aug 26 10:44:00 CST 2019
+>>>>>>> branch 'master' of https://github.com/HEZ1761428840/shoesMall.git
      */
     public static class Criterion {
         private String condition;

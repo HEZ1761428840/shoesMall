@@ -11,6 +11,8 @@ public class ShoesMallApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		StringBuffer sb = new StringBuffer("adasf");
+		System.out.println(sb.toString());
 	}
 
 }

@@ -36,7 +36,7 @@
 <body>
 	
 	<jsp:include page="common/header.jsp"></jsp:include>
-
+	<jsp:include page="common/main.jsp"></jsp:include>
     <!-- offcanvas search form start -->
     <div class="offcanvas-search-wrapper">
         <div class="offcanvas-search-inner">
@@ -54,27 +54,6 @@
         </div>
     </div>
     <!-- offcanvas search form end -->
-
-    <main>
-        <!-- breadcrumb area start -->
-        <div class="breadcrumb-area breadcrumb-img bg-img" data-bg="assets/img/banner/shop.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-wrap">
-                            <nav aria-label="breadcrumb">
-                                <h3 class="breadcrumb-title">LOGIN REGISTER</h3>
-                                <ul class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Login Register</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- breadcrumb area end -->
 
         <!-- login register wrapper start -->
         <div class="login-register-wrapper section-padding">

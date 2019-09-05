@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
   mvc: 
     view:
@@ -34,6 +35,7 @@ logging:
     com:
       yc: debug
 
+=======
 spring:
   mvc: 
     view:
@@ -67,4 +69,5 @@ logging:
     com:
       yc: debug
 
+>>>>>>> branch 'master' of https://github.com/HEZ1761428840/shoesMall.git
  

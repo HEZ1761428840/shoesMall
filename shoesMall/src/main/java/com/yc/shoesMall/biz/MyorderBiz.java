@@ -32,7 +32,7 @@ public class MyorderBiz {
 	 */
 	public List<Orders> queryMyOrder(int id) {
 		
-		return om.selectOrdersByPrimaryKey(id);
+		return (List<Orders>) om.selectByPrimaryKey(id);
 		
 		
 		
