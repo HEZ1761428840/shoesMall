@@ -29,6 +29,8 @@
     <collection property="image" column="id" fetchType="lazy"
     	select="selectImageById"></collection>
     
+    <collection property="productSizes" column="id" select="selectSizes"></collection>
+    
   </resultMap>
   
   <!-- 查询图片表 -->
