@@ -7,8 +7,27 @@ package com.yc.shoesMall.result;
 public class Result {
 	private int code;
 	private String msg;
+	
 	private Object data;
 	
+	/**
+	 * layui用到的格式,加一个字段
+	 */
+	private int count;
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	public Result(int code, String msg,int count, Object data) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.count = count;
+		this.data = data;
+	}
 	
 	public Result(int code, String msg, Object data) {
 		super();

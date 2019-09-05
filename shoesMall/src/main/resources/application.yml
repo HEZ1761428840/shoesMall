@@ -9,6 +9,9 @@ spring:
     username: root
     password: a
     driver-class-name: com.mysql.jdbc.Driver
+# 添加  默认使用jackson解析 设置日期格式  
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
       
 # 邮件服务配置
   mail:
