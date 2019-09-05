@@ -26,7 +26,14 @@
     
   </resultMap>
   
-  
+   <select id="selectIamgs" resultMap="com.yc.shoesMall.dao.ImageMapper.BaseResultMap">
+  		select * from image where pid=#{id}
+  	</select>
+  	
+	   <select id="selectSizes" resultMap="com.yc.shoesMall.dao.ProductSizeMapper.BaseResultMap">
+	  		select * from product_size where pid=#{id}
+	  </select>
+    
   
   <sql id="Example_Where_Clause">
     <!--
