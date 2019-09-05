@@ -21,7 +21,6 @@
    <select id="selectIdByName"  resultType="java.lang.Integer">
     	select id from user where name = #{name}
   </select>
-  
   <!-- 对用户的模糊查询 名字的模糊查询， 类型的查询 状态的查询 -->
   <select id="queryUserByLike" resultMap="BaseResultMap">
 		select * from user

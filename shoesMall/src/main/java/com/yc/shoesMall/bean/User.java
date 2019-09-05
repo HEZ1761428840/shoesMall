@@ -311,6 +311,7 @@ public class User {
      * @param email the value for user.email
      *
      * @mbg.generated Mon Aug 26 10:44:00 CST 2019
+>>>>>>> branch 'master' of https://github.com/HEZ1761428840/shoesMall.git
      */
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();

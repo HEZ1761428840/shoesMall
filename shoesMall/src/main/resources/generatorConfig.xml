@@ -33,12 +33,9 @@
 			targetPackage="com.yc.shoesMall.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-
-		<!-- 使用 % 表示所有的表 ORCL MySQL 只要 tableName="%" -->
-
-		<table tableName="orders">
-
 		
+		<!-- 使用 % 表示所有的表 ORCL MySQL 只要 tableName="%" -->
+		<table tableName="orders">
 			<generatedKey column="ID" sqlStatement="MYSQl" identity="true" />
 		</table>
 

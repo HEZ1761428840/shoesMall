@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class blogAction {
+
 	@RequestMapping("blog")
 	public String blog() {
-		
 		return "blog";
 	}
 }
